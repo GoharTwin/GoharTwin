@@ -1,0 +1,37 @@
+{
+  "id": "gohar-zamin",
+  "type": "site",
+  "name": "Gohar Zamin",
+  "nameFa": "گهرزمین",
+  "children": [
+    {
+      "id": "pellet",
+      "type": "plant",
+      "name": "Pellet Plant",
+      "nameFa": "کارخانه گندله",
+      "children": [
+        {
+          "id": "grate-kiln-furnace",
+          "type": "area",
+          "name": "Grate-Kiln Furnace",
+          "nameFa": "کوره گریت-کیلن",
+          "children": [
+            {
+              "id": "windbox-zone-11",
+              "type": "system",
+              "name": "Windbox Zone 11",
+              "nameFa": "ویندباکس ناحیه ۱۱",
+              "children": [
+                {
+                  "type": "equipment",
+                  "ref": "fan-11",
+                  "tag": "FAN-11"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

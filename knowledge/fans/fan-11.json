@@ -1,0 +1,112 @@
+{
+  "tag": "FAN-11",
+  "name": "Windbox Cooling Fan 11",
+  "nameFa": "فن خنک‌کننده ویندباکس ۱۱",
+  "type": "centrifugal_fan",
+  "plant": "pellet",
+  "area": "Grate-Kiln Furnace — Windbox Zone 11",
+  "status": "operational",
+  "manufacturer": "TBD — Update from vendor datasheet",
+  "model": "TBD",
+  "serialNumber": "TBD",
+  "installDate": "TBD",
+  "version": "0.1.0",
+  "lastUpdated": "2026-07-05",
+  "specifications": {
+    "service": "Cooling air supply to windbox 11",
+    "designFlowRate_m3h": null,
+    "designPressure_Pa": null,
+    "designTemperature_C": null,
+    "impellerDiameter_mm": null,
+    "rotationSpeed_rpm": null,
+    "driveType": "direct / belt — TBD"
+  },
+  "motor": {
+    "tag": "M-11",
+    "ratedPower_kW": null,
+    "voltage_V": 6600,
+    "frequency_Hz": 50,
+    "ratedCurrent_A": null,
+    "efficiencyClass": "IE3",
+    "starterType": "VFD",
+    "notes": "Replace with Motor List data from plant"
+  },
+  "sensors": [
+    {
+      "tag": "PT-11A",
+      "name": "Discharge Pressure",
+      "type": "pressure_transmitter",
+      "unit": "kPa",
+      "range": "TBD"
+    },
+    {
+      "tag": "TT-11A",
+      "name": "Bearing Temperature DE",
+      "type": "temperature",
+      "unit": "°C",
+      "range": "TBD"
+    },
+    {
+      "tag": "TT-11B",
+      "name": "Bearing Temperature NDE",
+      "type": "temperature",
+      "unit": "°C",
+      "range": "TBD"
+    },
+    {
+      "tag": "VT-11A",
+      "name": "Vibration DE",
+      "type": "vibration",
+      "unit": "mm/s",
+      "range": "TBD"
+    },
+    {
+      "tag": "IT-11A",
+      "name": "Motor Current",
+      "type": "current",
+      "unit": "A",
+      "range": "TBD"
+    },
+    {
+      "tag": "ST-11A",
+      "name": "Fan Running Status",
+      "type": "status",
+      "unit": "bool",
+      "range": "Run/Stop"
+    }
+  ],
+  "interlocks": [
+    "Fan start blocked if windbox dampers not in safe position",
+    "Trip on high bearing temperature",
+    "Trip on high vibration",
+    "Minimum airflow before kiln load increase"
+  ],
+  "maintenance": {
+    "strategy": "Preventive + condition-based",
+    "intervals": [
+      { "task": "Bearing lubrication check", "frequency": "Monthly" },
+      { "task": "Impeller & inlet inspection", "frequency": "Annual shutdown" },
+      { "task": "Vibration baseline comparison", "frequency": "Weekly" },
+      { "task": "Motor insulation test", "frequency": "Annual" }
+    ],
+    "spareParts": [
+      "Bearing set DE/NDE",
+      "Coupling element",
+      "Inlet filter element",
+      "VFD cooling fan module"
+    ]
+  },
+  "documents": [
+    { "title": "Vendor datasheet", "status": "pending" },
+    { "title": "P&ID reference sheet", "status": "pending" },
+    { "title": "Motor list entry", "status": "pending" },
+    { "title": "Interlock logic diagram", "status": "pending" }
+  ],
+  "relatedEquipment": [
+    "WB-11",
+    "DMP-11",
+    "M-11",
+    "VFD-11"
+  ],
+  "aiContext": "Fan 11 supplies cooling air to Windbox 11 on the grate-kiln pellet furnace. It is part of the pellet plant gas flow and temperature control loop. Critical for uniform bed temperature and kiln stability. Use this passport as the base knowledge node for AI-assisted fault diagnosis and operator training."
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoharTwin Equipment Passport",
+  "type": "object",
+  "required": ["tag", "name", "type", "plant", "area", "status"],
+  "properties": {
+    "tag": { "type": "string", "description": "Plant tag e.g. FAN-11" },
+    "name": { "type": "string" },
+    "nameFa": { "type": "string" },
+    "type": { "type": "string" },
+    "plant": { "type": "string", "enum": ["pellet", "concentrate", "steel", "utility", "power", "water", "lab", "railway", "mine"] },
+    "area": { "type": "string" },
+    "status": { "type": "string", "enum": ["operational", "standby", "maintenance", "fault", "offline"] },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "serialNumber": { "type": "string" },
+    "installDate": { "type": "string", "format": "date" },
+    "specifications": { "type": "object" },
+    "motor": { "type": "object" },
+    "sensors": { "type": "array" },
+    "interlocks": { "type": "array" },
+    "maintenance": { "type": "object" },
+    "documents": { "type": "array" },
+    "relatedEquipment": { "type": "array", "items": { "type": "string" } },
+    "aiContext": { "type": "string" },
+    "version": { "type": "string" },
+    "lastUpdated": { "type": "string", "format": "date" }
+  }
+}
