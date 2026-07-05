@@ -2,21 +2,23 @@
 
 from datetime import datetime, timedelta, timezone
 
+import bcrypt
 import jwt
-from passlib.context import CryptContext
 
 from ..core.config import JWT_ALGORITHM, JWT_EXPIRE_HOURS, JWT_SECRET
 from ..core.logging import auth_log
 from ..repositories.auth_repo import AuthRepository
 from ..repositories.company_repo import CompanyRepository
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 auth_repo = AuthRepository()
 company_repo = CompanyRepository()
 
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    try:
+        return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+    except ValueError:
+        return False
 
 
 def create_token(user: dict) -> str:
