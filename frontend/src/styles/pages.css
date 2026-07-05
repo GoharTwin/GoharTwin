@@ -12,8 +12,8 @@
 }
 
 .landing-hero .hero-logo {
-  width: 120px;
-  height: 120px;
+  width: min(240px, 80vw);
+  height: auto;
   filter: drop-shadow(0 0 32px var(--accent-glow));
 }
 

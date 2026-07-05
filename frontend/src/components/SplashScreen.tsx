@@ -6,8 +6,7 @@ export default function SplashScreen() {
   return (
     <div className="splash">
       <div className="splash-content">
-        <Logo className="splash-logo splash-animate" />
-        <div className="splash-title">{t("common.appName")}</div>
+        <Logo className="splash-logo splash-animate" alt="GoharTwin" />
         <div className="splash-tagline">{t("splash.tagline")}</div>
       </div>
     </div>

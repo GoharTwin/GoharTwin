@@ -42,11 +42,7 @@ export default function Layout() {
       <header className="app-header">
         <div className="header-inner">
           <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>
-            <Logo className="brand-logo" />
-            <div className="brand-text">
-              <h1>{t("common.appName")}</h1>
-              <p>{t("common.tagline")}</p>
-            </div>
+            <Logo className="brand-logo" alt="GoharTwin" />
           </Link>
           <div className="header-search">
             <input

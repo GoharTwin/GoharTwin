@@ -11,8 +11,7 @@ export default function LandingPage() {
   return (
     <>
       <section className="landing-hero">
-        <Logo className="hero-logo splash-logo" />
-        <h1>{t("common.appName")}</h1>
+        <Logo className="hero-logo" alt="GoharTwin" />
         <p className="hero-tagline">{t("landing.heroTagline")}</p>
         <p className="hero-intro">{t("landing.heroIntro")}</p>
       </section>
