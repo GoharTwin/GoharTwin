@@ -1,0 +1,16 @@
+{
+  "version": "0.3.0",
+  "users": [
+    {
+      "id": "user-gmico-001",
+      "username": "1000-1800",
+      "passwordHash": "$2b$12$DBnUwS8CDkPB3VKH.Ssm7OBD4bf5lrNukv/bdlRwaVnWS.ch7xxuW",
+      "passwordAlgorithm": "bcrypt",
+      "companyId": "gmico",
+      "roleId": "administrator",
+      "displayName": "GMICO Operator",
+      "displayNameFa": "اپراتور گهرزمین",
+      "active": true
+    }
+  ]
+}

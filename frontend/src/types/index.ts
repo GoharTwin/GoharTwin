@@ -62,7 +62,8 @@ export interface SiteUnit {
   count: number;
 }
 
-export interface Site {
+/** @deprecated use Company */
+export type Site = {
   id: string;
   code: string;
   name: string;
@@ -72,11 +73,29 @@ export interface Site {
   status: "active" | "coming-soon";
   icon: string;
   units: SiteUnit[];
+};
+
+export interface Company extends Site {
+  website?: string;
+  officialWebsite?: string;
+  loginEnabled?: boolean;
+  loginRequired?: boolean;
+  logo?: string;
+}
+
+export interface CompanyDetail {
+  company: Company;
+  hierarchy: HierarchyNode | null;
+}
+
+export interface SiteDetail {
+  site: Site;
+  hierarchy: HierarchyNode | null;
 }
 
 export interface HierarchyNode {
   id: string;
-  type: "site" | "plant" | "area" | "system" | "equipment";
+  type: "company" | "site" | "plant" | "area" | "unit" | "system" | "equipment";
   name?: string;
   nameFa?: string;
   status?: string;
@@ -85,9 +104,14 @@ export interface HierarchyNode {
   children?: HierarchyNode[];
 }
 
-export interface SiteDetail {
-  site: Site;
-  hierarchy: HierarchyNode | null;
+export interface SearchResult {
+  type: string;
+  id: string;
+  tag?: string;
+  title: string;
+  titleFa?: string;
+  route?: string;
+  category?: string;
 }
 
 export interface KnowledgeItem {
@@ -140,10 +164,15 @@ export interface PlatformStats {
 }
 
 export interface AIStatus {
-  provider: string;
-  online: boolean;
-  knowledgeDriven: boolean;
-  requestCount: number;
+  connected: boolean;
+  provider: string | null;
+  message?: string;
+  messageFa?: string;
+  capabilities?: string[];
+  /** @deprecated */
+  online?: boolean;
+  knowledgeDriven?: boolean;
+  requestCount?: number;
 }
 
 export interface ChatAttachment {

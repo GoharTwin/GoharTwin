@@ -1,0 +1,10 @@
+{
+  "version": "0.3.0",
+  "features": {
+    "ai": { "enabled": false, "label": "AI Engineer", "labelFa": "مهندس هوش مصنوعی" },
+    "3d": { "enabled": true, "label": "3D Plant Scene", "labelFa": "صحنه سه‌بعدی کارخانه" },
+    "prediction": { "enabled": false, "label": "Predictive Analytics", "labelFa": "تحلیل پیش‌بینی" },
+    "simulation": { "enabled": false, "label": "Process Simulation", "labelFa": "شبیه‌سازی فرآیند" },
+    "integrations": { "enabled": false, "label": "External Integrations", "labelFa": "یکپارچه‌سازی خارجی" }
+  }
+}

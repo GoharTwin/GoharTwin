@@ -24,15 +24,31 @@
   "nav": {
     "home": "Home",
     "sites": "Sites",
+    "companies": "Companies",
     "dashboard": "Dashboard",
     "ai": "AI Engineer",
     "knowledge": "Knowledge Center",
+    "integrations": "Integrations",
+    "settings": "Settings",
     "menu": "Menu"
   },
   "landing": {
     "heroTagline": "The digital replica of your industrial complex",
     "heroIntro": "GoharTwin connects plants, equipment, live data and engineering knowledge into one intelligent platform — from the mine to the steel plant. Every asset gets a digital passport, every question gets a knowledge-driven answer.",
     "start": "Start Platform",
+    "aboutTitle": "About GoharTwin",
+    "aboutText": "GoharTwin is an Industrial Operating System — a unified platform for digital twins, industrial AI, knowledge management, and enterprise integration across the Golgohar industrial complex.",
+    "visionTitle": "Vision",
+    "visionText": "To become the leading Industrial Digital Twin platform in the region.",
+    "missionTitle": "Mission",
+    "missionText": "Empowering industries with intelligent digital twins to unlock operational excellence.",
+    "roadmapTitle": "Product Roadmap",
+    "roadmap": {
+      "v01": { "label": "v0.1", "desc": "Platform shell and first equipment passport" },
+      "v02": { "label": "v0.2", "desc": "Branding, i18n, sites, AI UI, dashboard" },
+      "v03": { "label": "v0.3", "desc": "Architecture foundation, auth, API v1, domain model" },
+      "v10": { "label": "v1.0", "desc": "Live data, 3D twin, real AI, plant-wide rollout" }
+    },
     "capabilitiesTitle": "Platform Capabilities",
     "capabilitiesSubtitle": "Six pillars of the GoharTwin platform",
     "capabilities": {
@@ -62,6 +78,43 @@
       }
     }
   },
+  "companies": {
+    "title": "Industrial Companies",
+    "subtitle": "Select a company to enter its digital twin platform",
+    "enter": "Enter",
+    "login": "Login",
+    "website": "Official Website"
+  },
+  "login": {
+    "title": "Company Login",
+    "subtitle": "Sign in with your company credentials",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign In",
+    "error": "Invalid username or password"
+  },
+  "integrations": {
+    "title": "Integrations Center",
+    "subtitle": "Connect external systems through the integration layer",
+    "notConnected": "Not connected"
+  },
+  "settings": {
+    "title": "Enterprise Settings",
+    "tabs": {
+      "company": "Company",
+      "companyDesc": "Organization profile and branding",
+      "language": "Language",
+      "languageDesc": "Default language and locale",
+      "theme": "Theme",
+      "themeDesc": "Visual theme and colors",
+      "ai": "AI",
+      "aiDesc": "AI provider and model settings",
+      "security": "Security",
+      "securityDesc": "Authentication and access control",
+      "integrations": "Integrations",
+      "integrationsDesc": "External system connections"
+    }
+  },
   "sites": {
     "title": "Industrial Sites",
     "subtitle": "Select a company to enter its digital twin",
@@ -77,12 +130,16 @@
     "areasTitle": "Areas",
     "equipmentTitle": "Equipment",
     "systemLabel": "System",
+    "overviewTab": "Overview",
+    "scene3dTab": "3D Scene",
+    "scene3dDesc": "Placeholder plant scene — click equipment boxes to open passports.",
     "noEquipment": "No equipment modelled in this plant yet. Passports will appear here as the knowledge base grows.",
     "openPassport": "Open Passport"
   },
   "breadcrumb": {
     "home": "Home",
-    "sites": "Sites"
+    "sites": "Sites",
+    "companies": "Companies"
   },
   "dashboard": {
     "title": "Operations Dashboard",
@@ -111,8 +168,10 @@
       "history": "History",
       "maintenance": "Maintenance",
       "knowledge": "Knowledge",
+      "relationships": "Relationships",
       "ai": "AI Assistant"
     },
+    "relationshipsTitle": "Equipment Relationship Graph",
     "general": "General",
     "motor": "Motor",
     "tag": "Tag",
@@ -181,6 +240,8 @@
     "thinking": "Thinking...",
     "online": "Online",
     "offline": "Offline",
+    "notConnected": "AI model not connected yet",
+    "notConnectedDesc": "The chat framework is ready. Connect an LLM provider to enable responses.",
     "provider": "Provider",
     "attachFile": "Attach file",
     "attachImage": "Attach image",

@@ -1,0 +1,63 @@
+{
+  "version": "0.3.0",
+  "integrations": [
+    {
+      "id": "parseh",
+      "name": "Parseh CMMS",
+      "nameFa": "سامانه پارسه",
+      "type": "cmms",
+      "status": "not_connected",
+      "description": "Maintenance management and work orders",
+      "descriptionFa": "مدیریت نگهداری و دستورکار"
+    },
+    {
+      "id": "sap",
+      "name": "SAP ERP",
+      "nameFa": "SAP",
+      "type": "erp",
+      "status": "not_connected"
+    },
+    {
+      "id": "opcua",
+      "name": "OPC-UA",
+      "nameFa": "OPC-UA",
+      "type": "scada",
+      "status": "not_connected"
+    },
+    {
+      "id": "mqtt",
+      "name": "MQTT Broker",
+      "nameFa": "MQTT",
+      "type": "messaging",
+      "status": "not_connected"
+    },
+    {
+      "id": "pi",
+      "name": "PI System",
+      "nameFa": "PI System",
+      "type": "historian",
+      "status": "not_connected"
+    },
+    {
+      "id": "historian",
+      "name": "Plant Historian",
+      "nameFa": "تاریخچه‌نگار",
+      "type": "historian",
+      "status": "not_connected"
+    },
+    {
+      "id": "laboratory",
+      "name": "Laboratory LIMS",
+      "nameFa": "آزمایشگاه",
+      "type": "laboratory",
+      "status": "not_connected"
+    },
+    {
+      "id": "rest",
+      "name": "REST API Gateway",
+      "nameFa": "REST API",
+      "type": "api",
+      "status": "not_connected"
+    }
+  ]
+}

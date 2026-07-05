@@ -3,9 +3,20 @@
   "name": "Windbox Cooling Fan 11",
   "nameFa": "فن خنک‌کننده ویندباکس ۱۱",
   "type": "centrifugal_fan",
+  "companyId": "gmico",
+  "siteId": "sirjan",
+  "plantId": "pellet",
+  "areaId": "grate-kiln-furnace",
+  "unitId": "windbox-zone-11",
   "plant": "pellet",
   "area": "Grate-Kiln Furnace — Windbox Zone 11",
   "status": "operational",
+  "healthScore": 92,
+  "passportVersion": "1.0.0",
+  "versionHistory": [
+    { "version": "1.0.0", "date": "2026-07-06", "note": "Initial digital passport with domain model fields" },
+    { "version": "0.1.0", "date": "2026-07-05", "note": "Proof of concept passport" }
+  ],
   "manufacturer": "TBD — Update from vendor datasheet",
   "model": "TBD",
   "serialNumber": "TBD",
@@ -108,5 +119,12 @@
     "M-11",
     "VFD-11"
   ],
-  "aiContext": "Fan 11 supplies cooling air to Windbox 11 on the grate-kiln pellet furnace. It is part of the pellet plant gas flow and temperature control loop. Critical for uniform bed temperature and kiln stability. Use this passport as the base knowledge node for AI-assisted fault diagnosis and operator training."
+  "relationships": ["m-11", "vfd-11", "wb-11", "bearing-de", "bearing-nde"],
+  "aiContext": "Fan 11 supplies cooling air to Windbox 11 on the grate-kiln pellet furnace. It is part of the pellet plant gas flow and temperature control loop. Critical for uniform bed temperature and kiln stability. Use this passport as the base knowledge node for AI-assisted fault diagnosis and operator training.",
+  "digitalThread": [
+    { "date": "2019-06-01", "type": "installation", "title": "Commissioning", "titleFa": "راه‌اندازی", "status": "completed" },
+    { "date": "2024-03-15", "type": "maintenance", "title": "Bearing lubrication", "titleFa": "روان‌کاری یاتاقان", "status": "completed" },
+    { "date": "2025-11-02", "type": "inspection", "title": "Vibration baseline update", "titleFa": "به‌روزرسانی خط مبنای ارتعاش", "status": "completed" },
+    { "date": "2026-07-01", "type": "alarm", "title": "High vibration warning", "titleFa": "هشدار ارتعاش بالا", "status": "resolved" }
+  ]
 }

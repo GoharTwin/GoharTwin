@@ -1,13 +1,13 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "sites": [
     {
-      "id": "gzmico",
-      "code": "GZMICO",
-      "name": "Gohar Zamin Mining & Industrial Company",
+      "id": "gmico",
+      "code": "GMICO",
+      "name": "Golgohar Mining & Industrial Company",
       "nameFa": "شرکت معدنی و صنعتی گهرزمین",
-      "description": "Iron ore mining and processing complex in Sirjan. Home of the GoharTwin pilot: the Pellet Plant with FAN-11 digital passport.",
-      "descriptionFa": "مجتمع استخراج و فرآوری سنگ‌آهن در سیرجان. میزبان پایلوت گوهرتوین: کارخانه گندله با شناسنامه دیجیتال FAN-11.",
+      "description": "Iron ore mining and processing complex in Sirjan. GoharTwin pilot site with Pellet Plant and FAN-11 digital passport.",
+      "descriptionFa": "مجتمع استخراج و فرآوری سنگ‌آهن در سیرجان. میزبان پایلوت گوهرتوین با کارخانه گندله و شناسنامه دیجیتال FAN-11.",
       "status": "active",
       "icon": "mine",
       "units": [
@@ -19,27 +19,12 @@
       ]
     },
     {
-      "id": "gmico",
-      "code": "GMICO",
-      "name": "Golgohar Mining & Industrial Company",
-      "nameFa": "شرکت معدنی و صنعتی گل‌گهر",
-      "description": "One of the largest iron ore producers in the Middle East, operating mines, concentrators and pellet plants in the Golgohar region.",
-      "descriptionFa": "از بزرگ‌ترین تولیدکنندگان سنگ‌آهن خاورمیانه با معادن، کارخانه‌های کنسانتره و گندله‌سازی در منطقه گل‌گهر.",
-      "status": "coming-soon",
-      "icon": "concentrator",
-      "units": [
-        { "type": "mine", "name": "Mine", "nameFa": "معدن", "count": 4 },
-        { "type": "concentrator", "name": "Concentrator", "nameFa": "کنسانتره", "count": 4 },
-        { "type": "pellet", "name": "Pellet Plant", "nameFa": "گندله‌سازی", "count": 2 }
-      ]
-    },
-    {
       "id": "gisdco",
       "code": "GISDCO",
       "name": "Golgohar Iron & Steel Development Company",
       "nameFa": "شرکت توسعه آهن و فولاد گل‌گهر",
-      "description": "Downstream steel producer of the Golgohar chain: direct reduction, steelmaking and rolling.",
-      "descriptionFa": "تولیدکننده فولاد در زنجیره پایین‌دستی گل‌گهر: احیای مستقیم، فولادسازی و نورد.",
+      "description": "Downstream steel producer of the Golgohar chain.",
+      "descriptionFa": "تولیدکننده فولاد در زنجیره پایین‌دستی گل‌گهر.",
       "status": "coming-soon",
       "icon": "steel",
       "units": [
@@ -49,10 +34,10 @@
       ]
     },
     {
-      "id": "jahan-foolad",
-      "code": "SJF",
-      "name": "Jahan Foolad",
-      "nameFa": "جهان فولاد سیرجان",
+      "id": "sjsco",
+      "code": "SJSCO",
+      "name": "Sirjan Jahan Steel Company",
+      "nameFa": "شرکت فولاد جهان سیرجان",
       "description": "Sirjan-based steel producer operating direct reduction modules and a steel plant.",
       "descriptionFa": "تولیدکننده فولاد مستقر در سیرجان با واحدهای احیای مستقیم و فولادسازی.",
       "status": "coming-soon",

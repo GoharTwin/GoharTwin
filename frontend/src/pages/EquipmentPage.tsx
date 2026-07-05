@@ -8,11 +8,13 @@ import EquipmentTabs from "../components/equipment/EquipmentTabs";
 import type { EquipmentPassport } from "../types";
 
 export default function EquipmentPage() {
-  const { id, siteId, plantId } = useParams<{
+  const { id, siteId, companyId, plantId } = useParams<{
     id: string;
     siteId?: string;
+    companyId?: string;
     plantId?: string;
   }>();
+  const cid = companyId || siteId;
   const { t } = useTranslation();
   const localized = useLocalized();
   const [equipment, setEquipment] = useState<EquipmentPassport | null>(null);
@@ -29,11 +31,11 @@ export default function EquipmentPage() {
   if (!equipment) return <div className="empty-state">{t("common.loading")}</div>;
 
   const crumbs =
-    siteId && plantId
+    cid && plantId
       ? [
-          { label: t("breadcrumb.sites"), to: "/sites" },
-          { label: siteId.toUpperCase(), to: `/sites/${siteId}` },
-          { label: plantId, to: `/sites/${siteId}/plants/${plantId}` },
+          { label: t("breadcrumb.companies"), to: "/companies" },
+          { label: cid.toUpperCase(), to: `/companies/${cid}` },
+          { label: plantId, to: `/companies/${cid}/plants/${plantId}` },
           { label: equipment.tag },
         ]
       : [{ label: equipment.tag }];

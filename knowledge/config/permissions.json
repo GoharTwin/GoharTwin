@@ -1,0 +1,49 @@
+{
+  "version": "0.3.0",
+  "permissions": [
+    "view:company",
+    "edit:company",
+    "view:plant",
+    "edit:plant",
+    "view:equipment",
+    "edit:passport",
+    "view:plc",
+    "edit:plc",
+    "view:knowledge",
+    "edit:knowledge",
+    "view:ai",
+    "use:ai",
+    "view:integrations",
+    "edit:integrations",
+    "view:audit",
+    "view:admin",
+    "edit:users",
+    "view:3d",
+    "view:simulation",
+    "view:prediction"
+  ],
+  "matrix": {
+    "administrator": ["*"],
+    "company-manager": [
+      "view:company", "edit:company", "view:plant", "view:equipment", "edit:passport",
+      "view:knowledge", "edit:knowledge", "view:ai", "use:ai", "view:integrations",
+      "view:audit", "view:3d", "view:simulation", "view:prediction"
+    ],
+    "plant-manager": [
+      "view:company", "view:plant", "edit:plant", "view:equipment", "edit:passport",
+      "view:knowledge", "view:ai", "use:ai", "view:3d", "view:prediction"
+    ],
+    "maintenance-engineer": [
+      "view:company", "view:plant", "view:equipment", "edit:passport",
+      "view:knowledge", "edit:knowledge", "view:plc", "view:ai", "use:ai"
+    ],
+    "process-engineer": [
+      "view:company", "view:plant", "view:equipment", "view:plc",
+      "view:knowledge", "view:ai", "use:ai", "view:3d", "view:simulation", "view:prediction"
+    ],
+    "operator": [
+      "view:company", "view:plant", "view:equipment", "view:knowledge", "view:ai", "view:3d"
+    ],
+    "guest": ["view:company", "view:equipment", "view:knowledge"]
+  }
+}

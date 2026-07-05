@@ -1,0 +1,64 @@
+{
+  "version": "0.3.0",
+  "companies": [
+    {
+      "id": "gmico",
+      "code": "GMICO",
+      "name": "Golgohar Mining & Industrial Company",
+      "nameFa": "شرکت معدنی و صنعتی گهرزمین",
+      "description": "Iron ore mining and processing complex in Sirjan. GoharTwin pilot site with Pellet Plant and FAN-11 digital passport.",
+      "descriptionFa": "مجتمع استخراج و فرآوری سنگ‌آهن در سیرجان. میزبان پایلوت گوهرتوین با کارخانه گندله و شناسنامه دیجیتال FAN-11.",
+      "status": "active",
+      "loginEnabled": true,
+      "website": "https://www.goharzamin.ir",
+      "logo": "/logo/logo.png",
+      "logoFallback": "/assets/branding/logo.svg",
+      "icon": "mine",
+      "legacyAliases": ["gzmico"],
+      "units": [
+        { "type": "mine", "name": "Mine", "nameFa": "معدن", "count": 1 },
+        { "type": "concentrator", "name": "Concentrator", "nameFa": "کنسانتره", "count": 3 },
+        { "type": "pellet", "name": "Pellet Plant", "nameFa": "گندله‌سازی", "count": 1 },
+        { "type": "dri", "name": "Direct Reduction", "nameFa": "احیای مستقیم", "count": 2 },
+        { "type": "steel", "name": "Steel Plant", "nameFa": "فولادسازی", "count": 1 }
+      ]
+    },
+    {
+      "id": "gisdco",
+      "code": "GISDCO",
+      "name": "Golgohar Iron & Steel Development Company",
+      "nameFa": "شرکت توسعه آهن و فولاد گل‌گهر",
+      "description": "Downstream steel producer of the Golgohar chain: direct reduction, steelmaking and rolling.",
+      "descriptionFa": "تولیدکننده فولاد در زنجیره پایین‌دستی گل‌گهر: احیای مستقیم، فولادسازی و نورد.",
+      "status": "coming-soon",
+      "loginEnabled": false,
+      "website": "https://www.gisdco.ir",
+      "logo": "/logo/gisdco.png",
+      "logoFallback": "/assets/branding/logo.svg",
+      "icon": "steel",
+      "units": [
+        { "type": "dri", "name": "Direct Reduction", "nameFa": "احیای مستقیم", "count": 3 },
+        { "type": "steel", "name": "Steel Plant", "nameFa": "فولادسازی", "count": 1 },
+        { "type": "rolling", "name": "Rolling Mill", "nameFa": "نورد", "count": 1 }
+      ]
+    },
+    {
+      "id": "sjsco",
+      "code": "SJSCO",
+      "name": "Sirjan Jahan Steel Company",
+      "nameFa": "شرکت فولاد جهان سیرجان",
+      "description": "Sirjan-based steel producer operating direct reduction modules and a steel plant.",
+      "descriptionFa": "تولیدکننده فولاد مستقر در سیرجان با واحدهای احیای مستقیم و فولادسازی.",
+      "status": "coming-soon",
+      "loginEnabled": false,
+      "website": "https://www.sjsco.ir",
+      "logo": "/logo/sjsco.png",
+      "logoFallback": "/assets/branding/logo.svg",
+      "icon": "dri",
+      "units": [
+        { "type": "dri", "name": "Direct Reduction", "nameFa": "احیای مستقیم", "count": 3 },
+        { "type": "steel", "name": "Steel Plant", "nameFa": "فولادسازی", "count": 1 }
+      ]
+    }
+  ]
+}

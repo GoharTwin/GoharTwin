@@ -1,0 +1,26 @@
+{
+  "version": "0.3.0",
+  "equipmentId": "fan-11",
+  "tag": "FAN-11",
+  "nodes": [
+    { "id": "fan-11", "type": "equipment", "tag": "FAN-11", "name": "Windbox Cooling Fan 11", "nameFa": "فن خنک‌کننده ویندباکس ۱۱" },
+    { "id": "m-11", "type": "component", "tag": "M-11", "name": "Drive Motor", "nameFa": "موتور محرک" },
+    { "id": "vfd-11", "type": "component", "tag": "VFD-11", "name": "Variable Frequency Drive", "nameFa": "درایو فرکانس متغیر" },
+    { "id": "bearing-de", "type": "component", "tag": "BRG-11-DE", "name": "Bearing DE", "nameFa": "یاتاقان سمت محرک" },
+    { "id": "bearing-nde", "type": "component", "tag": "BRG-11-NDE", "name": "Bearing NDE", "nameFa": "یاتاقان سمت آزاد" },
+    { "id": "wb-11", "type": "equipment", "tag": "WB-11", "name": "Windbox 11", "nameFa": "ویندباکس ۱۱" },
+    { "id": "pt-11a", "type": "sensor", "tag": "PT-11A", "name": "Discharge Pressure", "nameFa": "فشار دم فن" },
+    { "id": "tt-11a", "type": "sensor", "tag": "TT-11A", "name": "Bearing Temperature DE", "nameFa": "دمای یاتاقان محرک" },
+    { "id": "vt-11a", "type": "sensor", "tag": "VT-11A", "name": "Vibration DE", "nameFa": "ارتعاش محرک" }
+  ],
+  "edges": [
+    { "from": "fan-11", "to": "m-11", "type": "driven_by", "label": "Driven by", "labelFa": "محرک" },
+    { "from": "m-11", "to": "vfd-11", "type": "powered_by", "label": "Powered by", "labelFa": "تغذیه از" },
+    { "from": "fan-11", "to": "bearing-de", "type": "contains", "label": "Contains", "labelFa": "شامل" },
+    { "from": "fan-11", "to": "bearing-nde", "type": "contains", "label": "Contains", "labelFa": "شامل" },
+    { "from": "fan-11", "to": "wb-11", "type": "supplies_air_to", "label": "Supplies air to", "labelFa": "تأمین هوا به" },
+    { "from": "fan-11", "to": "pt-11a", "type": "monitored_by", "label": "Monitored by", "labelFa": "پایش با" },
+    { "from": "fan-11", "to": "tt-11a", "type": "monitored_by", "label": "Monitored by", "labelFa": "پایش با" },
+    { "from": "fan-11", "to": "vt-11a", "type": "monitored_by", "label": "Monitored by", "labelFa": "پایش با" }
+  ]
+}

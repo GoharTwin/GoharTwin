@@ -1,0 +1,31 @@
+{
+  "name": "gohartwin-desktop",
+  "version": "0.3.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env GOHARTWIN_DEV=1 electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "ir.goharzamin.gohartwin",
+    "productName": "GoharTwin",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js"],
+    "extraResources": [
+      { "from": "../backend", "to": "backend", "filter": ["**/*", "!.venv/**", "!**/__pycache__/**"] },
+      { "from": "../frontend/dist", "to": "frontend/dist" },
+      { "from": "../knowledge", "to": "knowledge" }
+    ],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "artifactName": "GoharTwin-${version}-portable.exe"
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}

@@ -1,0 +1,16 @@
+---
+description: GoharTwin permanent architecture rules for all agents
+alwaysApply: true
+---
+
+Before making any change, read and follow `docs/PRINCIPLES.md` and `docs/HANDBOOK.md`.
+
+Hard rules:
+- Nothing hardcoded: companies, plants, equipment, users, roles, menus, text → JSON/config/API only.
+- Universal hierarchy: Company→Site→Plant→Area→Unit→Equipment→Component→Sensor→Tag→Knowledge.
+- Clean Architecture: UI → services → domain → repositories (JSON now, DB later).
+- All API routes under `/api/v1/`; frontend uses typed client.
+- Full i18n (fa/en): zero hardcoded UI strings.
+- No fake AI: framework only until LLM provider connected.
+- Small files (~300 lines max), component-based UI.
+- Every version ends with architecture review notes in docs.

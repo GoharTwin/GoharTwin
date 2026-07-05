@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getAIStatus, streamChat } from "../../api/client";
+import { aiChat } from "../../api/client";
 import { useConversations } from "../../hooks/useConversations";
 import ChatSidebar from "./ChatSidebar";
 import ChatMessageBubble from "./ChatMessageBubble";
 import ChatComposer from "./ChatComposer";
-import type { AIStatus, ChatAttachment, ChatMessage } from "../../types";
+import type { ChatAttachment } from "../../types";
 
 interface Props {
-  /** Scope the assistant (and conversation storage) to one equipment item. */
   equipmentId?: string;
-  /** Embedded mode hides the conversation sidebar (used inside the passport). */
   embedded?: boolean;
 }
 
@@ -25,18 +23,9 @@ export default function ChatPanel({ equipmentId, embedded }: Props) {
     rename,
     remove,
     appendMessage,
-    updateMessage,
   } = useConversations(equipmentId);
-  const [status, setStatus] = useState<AIStatus | null>(null);
   const [thinking, setThinking] = useState(false);
-  const [streamingId, setStreamingId] = useState<string | null>(null);
   const messagesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    getAIStatus()
-      .then(setStatus)
-      .catch(() => setStatus(null));
-  }, []);
 
   useEffect(() => {
     messagesRef.current?.scrollTo({ top: messagesRef.current.scrollHeight });
@@ -46,42 +35,33 @@ export default function ChatPanel({ equipmentId, embedded }: Props) {
     const conversationId =
       activeId && active ? activeId : create(text.slice(0, 40) || t("ai.defaultTitle"));
 
-    const userMessage: ChatMessage = {
+    appendMessage(conversationId, {
       id: crypto.randomUUID(),
       role: "user",
       content: text,
       attachments: attachments.length ? attachments : undefined,
       timestamp: Date.now(),
-    };
-    appendMessage(conversationId, userMessage);
+    });
 
-    const assistantMessage: ChatMessage = {
-      id: crypto.randomUUID(),
-      role: "assistant",
-      content: "",
-      timestamp: Date.now(),
-    };
-
+    const assistantId = crypto.randomUUID();
     setThinking(true);
-    let buffer = "";
-    let started = false;
     try {
-      await streamChat(text, i18n.language, equipmentId ?? null, (chunk) => {
-        if (!started) {
-          started = true;
-          setThinking(false);
-          appendMessage(conversationId, assistantMessage);
-          setStreamingId(assistantMessage.id);
-        }
-        buffer += chunk;
-        updateMessage(conversationId, assistantMessage.id, buffer);
+      const res = await aiChat(text, i18n.language, equipmentId ?? null);
+      appendMessage(conversationId, {
+        id: assistantId,
+        role: "assistant",
+        content: res.message,
+        timestamp: Date.now(),
       });
     } catch {
-      if (!started) appendMessage(conversationId, assistantMessage);
-      updateMessage(conversationId, assistantMessage.id, t("common.backendOffline"));
+      appendMessage(conversationId, {
+        id: assistantId,
+        role: "assistant",
+        content: t("common.backendOffline"),
+        timestamp: Date.now(),
+      });
     } finally {
       setThinking(false);
-      setStreamingId(null);
     }
   };
 
@@ -108,10 +88,7 @@ export default function ChatPanel({ equipmentId, embedded }: Props) {
               </span>
             )}
           </span>
-          <span className={`ai-status-dot${status?.online ? "" : " offline"}`}>
-            {status?.online ? t("ai.online") : t("ai.offline")}
-            {status && ` · ${t("ai.provider")}: ${status.provider}`}
-          </span>
+          <div className="ai-not-connected-banner">{t("ai.notConnected")} — {t("ai.notConnectedDesc")}</div>
         </div>
 
         <div className="chat-messages" ref={messagesRef}>
@@ -122,26 +99,18 @@ export default function ChatPanel({ equipmentId, embedded }: Props) {
             </div>
           ) : (
             active.messages.map((message) => (
-              <ChatMessageBubble
-                key={message.id}
-                message={message}
-                streaming={message.id === streamingId}
-              />
+              <ChatMessageBubble key={message.id} message={message} streaming={false} />
             ))
           )}
           {thinking && (
             <div className="typing-indicator">
-              <span className="typing-dots">
-                <span />
-                <span />
-                <span />
-              </span>
+              <span className="typing-dots"><span /><span /><span /></span>
               {t("ai.thinking")}
             </div>
           )}
         </div>
 
-        <ChatComposer disabled={thinking || streamingId !== null} onSend={send} />
+        <ChatComposer disabled={thinking} onSend={send} />
       </section>
     </div>
   );

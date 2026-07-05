@@ -2,70 +2,48 @@
 
 **Industrial Digital Twin Platform — bilingual (فارسی / English)**
 
-Version: **0.2.0**
+Version: **0.3.0**
 
 ## Overview
 
-GoharTwin is an industrial digital twin platform for the Gohar / Golgohar
-industrial region: mines, concentrators, pellet plants, direct reduction and
-steel plants — with knowledge-driven AI assistance.
+GoharTwin is an Industrial Operating System — a data-driven digital twin platform for the Golgohar industrial complex. v0.3 establishes the final architecture foundation: Clean Architecture backend, API v1, repository pattern, auth, domain model, 3D scene placeholder, and desktop shell.
 
-Version 0.2 delivers:
+## Key Features (v0.3)
 
-- **Branding** — GoharTwin logo (SVG), splash screen with animation, favicon,
-  faint page watermark
-- **i18n** — full Persian/English UI (i18next), RTL/LTR switching, Vazirmatn
-  font for Persian, language persisted in localStorage (default fa)
-- **Landing page** — hero + six capability cards (Digital Twin, Industrial AI,
-  Knowledge Graph, Predictive Maintenance, Digital Factory, Process Intelligence)
-- **Site selection** — 4 industrial companies (GZMICO, GMICO, GISDCO, Jahan
-  Foolad) served from `knowledge/sites.json`
-- **Dynamic navigation** — Site → Plant → Area → System → Equipment with
-  breadcrumbs, fully driven by the API (GZMICO → Pellet Plant → Grate-Kiln
-  Furnace → Windbox Zone 11 → FAN-11)
-- **AI Engineer** — chat UI with conversation list (create/rename/delete,
-  localStorage), streaming replies, markdown + syntax highlighting, attachment
-  chips; backend stub streams knowledge-driven bilingual answers (FAN-11
-  questions answered from the real passport)
-- **Dashboard** — stat cards, health gauge, recent assets/documents, alarm
-  summary from `GET /api/stats`
-- **Knowledge Center** — 8 categories (Documents, P&ID, Manuals, Photos,
-  Videos, Drawings, Standards, Lessons Learned) with search, served from
-  `knowledge/library.json`
-- **FAN-11 passport redesign** — tabs: Overview, Specifications, Sensors,
-  Documents, History, Maintenance, Knowledge, AI Assistant
-- **Dark industrial theme** — glass-morphism cards, blue + gold palette,
-  responsive with mobile menu
+- **Architecture foundation** — Presentation / Application / Domain / Infrastructure layers
+- **Master data** — All companies, hierarchy, config in `knowledge/` JSON
+- **API v1** — `/api/v1/*` with legacy `/api/*` aliases
+- **Auth** — GMICO login (config-driven bcrypt + JWT)
+- **Universal search** — Equipment, documents, companies, hierarchy
+- **Equipment passport** — FAN-11 with relationships, health score, digital thread
+- **AI framework** — UI shell only; no fake responses
+- **3D placeholder** — Three.js orbit scene on plant page
+- **Desktop app** — Electron wrapper + portable build script
+- **SJSCO** — Replaces all Jahan Foolad references
 
 ## Project Structure
 
 ```
 GoharTwin/
-├── frontend/          # React + Vite + TypeScript UI (i18n fa/en)
-├── backend/           # FastAPI REST API + AI stub
-├── knowledge/         # Sites, hierarchy, library, equipment passports (JSON)
-├── data/              # Runtime / imported plant data
-├── docs/              # Handbook, architecture, knowledge model
-├── assets/            # Branding (logo)
-└── scripts/           # Dev & deploy scripts
+├── frontend/     # React + Vite + TypeScript (fa/en)
+├── backend/      # FastAPI Clean Architecture
+├── knowledge/    # Master data JSON
+├── desktop/      # Electron desktop shell
+├── docs/         # Architecture, API, domain model
+└── logo/         # Brand logo (optional — falls back to assets/)
 ```
 
 ## Quick Start
 
-### Prerequisites
-
-- Node.js 18+
-- Python 3.10+ with `fastapi` and `uvicorn` (a venv exists at `backend/.venv`)
-
-### 1. Backend
+### Backend
 
 ```powershell
 backend\.venv\Scripts\python.exe backend\main.py
 ```
 
-### 2. Frontend
+API: http://127.0.0.1:8000 — Docs: http://127.0.0.1:8000/docs
 
-Open a new terminal:
+### Frontend
 
 ```powershell
 cd frontend
@@ -73,27 +51,52 @@ npm install
 npm run dev
 ```
 
-### 3. Open
+UI: http://127.0.0.1:5173
 
-- UI: http://127.0.0.1:5173
-- API: http://127.0.0.1:8000 (docs at /docs)
-- API Health: http://127.0.0.1:8000/api/health
+### Login (GMICO)
 
-### Production build
+- URL: http://127.0.0.1:5173/login?company=gmico
+- Username: `1000-1800`
+- Password: `Goharzamin`
+
+### Desktop (Dev)
+
+```powershell
+# Terminal 1: backend + frontend as above
+# Terminal 2:
+cd desktop
+npm install
+npm run dev
+```
+
+### Desktop (Portable EXE)
+
+```powershell
+.\desktop\build.ps1
+# Output: desktop\dist\GoharTwin-0.3.0-portable.exe
+```
+
+Requires: Node.js 18+, Python 3.10+ venv at `backend/.venv`
+
+### Production Build
 
 ```powershell
 cd frontend
-npm run build   # TypeScript strict check + Vite build → dist/
+npm run build
 ```
+
+## Architecture Summary
+
+See [docs/CORE-PRINCIPLES.md](docs/CORE-PRINCIPLES.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Version Roadmap
 
 | Version | Focus |
 |---------|-------|
-| v0.1 | ✅ Platform shell, Fan 11 passport, API skeleton |
-| v0.2 | ✅ Branding, i18n (fa/en), landing, sites, dynamic navigation, AI chat, dashboard, knowledge center |
-| v0.3 | Real plant tag list & P&ID data import, furnace SVG, search |
-| v1.0 | 3D plant scenes, live process data, AI on real LLM |
+| v0.1 | ✅ Platform shell, FAN-11 passport |
+| v0.2 | ✅ Branding, i18n, sites, AI UI, dashboard |
+| v0.3 | ✅ Architecture foundation, auth, API v1, 3D, desktop |
+| v1.0 | Live data, real AI, PostgreSQL, full 3D twin |
 
 ## License
 

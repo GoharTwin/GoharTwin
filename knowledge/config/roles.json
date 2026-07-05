@@ -1,0 +1,54 @@
+{
+  "version": "0.3.0",
+  "roles": [
+    {
+      "id": "administrator",
+      "name": "Administrator",
+      "nameFa": "مدیر سیستم",
+      "description": "Full platform access",
+      "descriptionFa": "دسترسی کامل به پلتفرم"
+    },
+    {
+      "id": "company-manager",
+      "name": "CompanyManager",
+      "nameFa": "مدیر شرکت",
+      "description": "Company-wide configuration and reporting",
+      "descriptionFa": "پیکربندی و گزارش‌دهی در سطح شرکت"
+    },
+    {
+      "id": "plant-manager",
+      "name": "PlantManager",
+      "nameFa": "مدیر کارخانه",
+      "description": "Plant operations and asset oversight",
+      "descriptionFa": "بهره‌برداری کارخانه و نظارت بر دارایی‌ها"
+    },
+    {
+      "id": "maintenance-engineer",
+      "name": "MaintenanceEngineer",
+      "nameFa": "مهندس نگهداری",
+      "description": "Maintenance plans, work orders, CMMS",
+      "descriptionFa": "برنامه نگهداری، دستورکار، CMMS"
+    },
+    {
+      "id": "process-engineer",
+      "name": "ProcessEngineer",
+      "nameFa": "مهندس فرآیند",
+      "description": "Process data, P&IDs, simulations",
+      "descriptionFa": "داده فرآیند، P&ID، شبیه‌سازی"
+    },
+    {
+      "id": "operator",
+      "name": "Operator",
+      "nameFa": "اپراتور",
+      "description": "Operational dashboards and equipment view",
+      "descriptionFa": "داشبورد عملیاتی و نمای تجهیزات"
+    },
+    {
+      "id": "guest",
+      "name": "Guest",
+      "nameFa": "مهمان",
+      "description": "Read-only public views",
+      "descriptionFa": "نمای فقط-خواندنی عمومی"
+    }
+  ]
+}

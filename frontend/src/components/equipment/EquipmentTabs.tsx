@@ -7,6 +7,7 @@ import DocumentsTab from "./DocumentsTab";
 import HistoryTab from "./HistoryTab";
 import MaintenanceTab from "./MaintenanceTab";
 import KnowledgeTab from "./KnowledgeTab";
+import RelationshipsTab from "./RelationshipsTab";
 import ChatPanel from "../chat/ChatPanel";
 import type { EquipmentPassport } from "../../types";
 
@@ -18,6 +19,7 @@ const TABS = [
   "history",
   "maintenance",
   "knowledge",
+  "relationships",
   "ai",
 ] as const;
 
@@ -53,6 +55,7 @@ export default function EquipmentTabs({ equipment, equipmentId }: Props) {
       {tab === "history" && <HistoryTab />}
       {tab === "maintenance" && <MaintenanceTab equipment={equipment} />}
       {tab === "knowledge" && <KnowledgeTab equipment={equipment} />}
+      {tab === "relationships" && <RelationshipsTab equipmentId={equipmentId} />}
       {tab === "ai" && <ChatPanel equipmentId={equipmentId} embedded />}
     </>
   );

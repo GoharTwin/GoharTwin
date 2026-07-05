@@ -24,6 +24,37 @@
   filter: grayscale(35%);
 }
 
+.splash-animate {
+  animation: splashIn 2s ease forwards;
+}
+
+@keyframes splashIn {
+  0% { opacity: 0; transform: scale(0.85) rotate(-8deg); filter: drop-shadow(0 0 0 transparent); }
+  40% { opacity: 1; transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 24px rgba(212, 164, 55, 0.45)); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.header-search { position: relative; flex: 1; max-width: 280px; margin: 0 1rem; }
+.header-search input { width: 100%; padding: 0.45rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-glass); color: var(--text-primary); }
+.search-dropdown { position: absolute; top: 100%; left: 0; right: 0; margin-top: 0.25rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; z-index: 20; max-height: 240px; overflow: auto; }
+.search-dropdown button { display: block; width: 100%; text-align: start; padding: 0.5rem 0.75rem; background: none; border: none; color: var(--text-primary); cursor: pointer; }
+.search-dropdown button:hover { background: rgba(255,255,255,0.05); }
+
+.login-page { min-height: 70vh; display: grid; place-items: center; }
+.login-card { max-width: 420px; width: 100%; padding: 2rem; text-align: center; }
+.login-logo { width: 72px; margin: 0 auto 1rem; }
+.login-form { display: grid; gap: 1rem; text-align: start; margin-top: 1rem; }
+.login-form label { display: grid; gap: 0.35rem; font-size: 0.85rem; }
+.login-form input { padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); }
+.form-error { color: #f87171; font-size: 0.85rem; }
+
+.landing-section { margin: 2.5rem 0; }
+.landing-section.two-col { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.landing-center { text-align: center; }
+.roadmap-list { list-style: none; display: grid; gap: 0.75rem; padding: 0; }
+.ai-not-connected-banner { background: rgba(212,164,55,0.12); border: 1px solid rgba(212,164,55,0.35); padding: 0.5rem 0.75rem; border-radius: 8px; margin-bottom: 0.75rem; font-size: 0.85rem; }
+
+
 /* --- Header --- */
 
 .app-header {
