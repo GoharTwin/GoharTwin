@@ -1,0 +1,9 @@
+# Release output folder
+
+Portable Windows EXE is generated here by:
+
+```powershell
+.\scripts\build-release.ps1
+```
+
+Deliverable: `GoharTwin-0.3.0-portable.exe`

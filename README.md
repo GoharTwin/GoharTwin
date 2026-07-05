@@ -69,14 +69,17 @@ npm install
 npm run dev
 ```
 
-### Desktop (Portable EXE)
+### Desktop (Portable EXE — no Node/Python required to run)
+
+Download from [GitHub Releases](https://github.com/GoharTwin/GoharTwin/releases) or build locally:
 
 ```powershell
-.\desktop\build.ps1
-# Output: desktop\dist\GoharTwin-0.3.0-portable.exe
+.\scripts\build-release.ps1
 ```
 
-Requires: Node.js 18+, Python 3.10+ venv at `backend/.venv`
+**Deliverable:** `release\output\GoharTwin-0.3.0-portable.exe` (~90 MB, double-click to run)
+
+Build machine requires: Node.js 18+, Python 3.10+ venv at `backend/.venv`, PyInstaller (installed automatically).
 
 ### Production Build
 

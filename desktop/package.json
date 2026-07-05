@@ -23,6 +23,7 @@
       { "from": "../assets/branding", "to": "assets/branding" }
     ],
     "win": {
+      "signAndEditExecutable": false,
       "target": [{ "target": "portable", "arch": ["x64"] }],
       "artifactName": "GoharTwin-${version}-portable.exe"
     }
