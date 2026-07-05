@@ -1,7 +1,7 @@
 """AI module — framework only, no fake responses."""
 
-from ..core.logging import ai_log
-from ..domain.models import AIStatusResponse, ChatRequest
+from ...core.logging import ai_log
+from ...domain.models import AIStatusResponse, ChatRequest
 
 
 def get_status() -> AIStatusResponse:

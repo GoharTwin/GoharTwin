@@ -2,13 +2,12 @@
 
 from fastapi import APIRouter
 
-from ..v1.router import MODULES, company_repo, config_repo
-from ..v1.stats import stats_payload
-from ... import VERSION
-from ...domain.models import EquipmentSummary
-from ...modules.ai import provider
-from ...domain.models import ChatRequest
-from ...services import equipment_service, knowledge_service
+from .v1.router import MODULES, company_repo, config_repo
+from .v1.stats import stats_payload
+from .. import VERSION
+from ..domain.models import ChatRequest
+from ..modules.ai import provider
+from ..services import equipment_service, knowledge_service
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse
 
