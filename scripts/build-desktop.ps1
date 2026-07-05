@@ -1,11 +1,9 @@
-# Build frontend then launch portable runtime
+# Desktop launcher — uses the same unified build as web (no manual copy steps)
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot\..
 
-Write-Host "Building frontend..."
-Set-Location frontend
-npm run build
-Set-Location ..
+Write-Host "=== GoharTwin desktop build ===" -ForegroundColor Cyan
+& "$PSScriptRoot\build-all.ps1"
 
-Write-Host "Starting GoharTwin..."
+Write-Host "Starting GoharTwin desktop..."
 python desktop\launcher.py

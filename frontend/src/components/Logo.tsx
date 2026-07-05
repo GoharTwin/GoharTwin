@@ -1,11 +1,5 @@
-import logoPng from "../assets/logo.png";
+import { LOGO_URL } from "../core/branding";
 import logoSvg from "../assets/logo.svg";
-
-const FALLBACKS = [logoPng, logoSvg];
-
-export function resolveLogoSrc(): string {
-  return logoPng;
-}
 
 interface Props {
   className?: string;
@@ -16,13 +10,12 @@ export default function Logo({ className, alt = "GoharTwin" }: Props) {
   return (
     <img
       className={className}
-      src={resolveLogoSrc()}
+      src={LOGO_URL}
       alt={alt}
       onError={(e) => {
-        const img = e.currentTarget;
-        const current = FALLBACKS.findIndex((src) => img.src.includes(src.split("/").pop() ?? ""));
-        const next = FALLBACKS[current + 1];
-        if (next) img.src = next;
+        if (!e.currentTarget.src.endsWith("logo.svg")) {
+          e.currentTarget.src = logoSvg;
+        }
       }}
     />
   );

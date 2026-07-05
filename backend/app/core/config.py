@@ -1,12 +1,22 @@
 """Application configuration — paths and feature flags from knowledge JSON."""
 
 import json
+import os
 from functools import lru_cache
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent.parent.parent
+
+def _resolve_root() -> Path:
+    env_root = os.environ.get("GOHARTWIN_ROOT")
+    if env_root:
+        return Path(env_root)
+    return Path(__file__).resolve().parent.parent.parent.parent
+
+
+ROOT = _resolve_root()
 KNOWLEDGE_ROOT = ROOT / "knowledge"
 CONFIG_ROOT = KNOWLEDGE_ROOT / "config"
+FRONTEND_DIST = ROOT / "frontend" / "dist"
 
 JWT_SECRET = "gohartwin-dev-secret-change-in-production"
 JWT_ALGORITHM = "HS256"

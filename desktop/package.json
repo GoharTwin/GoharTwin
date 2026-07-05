@@ -11,12 +11,16 @@
   "build": {
     "appId": "ir.goharzamin.gohartwin",
     "productName": "GoharTwin",
-    "directories": { "output": "dist" },
+    "directories": {
+      "output": "../release/output/electron-build"
+    },
     "files": ["main.js", "preload.js"],
     "extraResources": [
-      { "from": "../backend", "to": "backend", "filter": ["**/*", "!.venv/**", "!**/__pycache__/**"] },
+      { "from": "../release/staging/backend/gohartwin-api.exe", "to": "backend/gohartwin-api.exe" },
       { "from": "../frontend/dist", "to": "frontend/dist" },
-      { "from": "../knowledge", "to": "knowledge" }
+      { "from": "../knowledge", "to": "knowledge" },
+      { "from": "../logo", "to": "logo" },
+      { "from": "../assets/branding", "to": "assets/branding" }
     ],
     "win": {
       "target": [{ "target": "portable", "arch": ["x64"] }],

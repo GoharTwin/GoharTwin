@@ -253,6 +253,7 @@
     "assistant": "AI Engineer"
   },
   "splash": {
-    "tagline": "Industrial Digital Twin Platform"
+    "loading": "Loading GoharTwin",
+    "tagline": "Building the Future of Industrial Intelligence"
   }
 }

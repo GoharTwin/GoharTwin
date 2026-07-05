@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getCompanyDetail, getSceneConfig } from "../api/client";
 import { useLocalized } from "../i18n/useLocalized";
 import Breadcrumbs from "../components/Breadcrumbs";
-import PlaceholderPlantScene from "../scenes/PlaceholderPlantScene";
+import PageSkeleton from "../components/PageSkeleton";
 import { findPlant, companyPath } from "../utils/hierarchy";
 import type { CompanyDetail, HierarchyNode } from "../types";
+
+const PlaceholderPlantScene = lazy(() => import("../scenes/PlaceholderPlantScene"));
 
 export default function PlantPage() {
   const { companyId, siteId, plantId } = useParams<{ companyId?: string; siteId?: string; plantId: string }>();
@@ -57,10 +59,12 @@ export default function PlantPage() {
       {view === "3d" ? (
         <div className="panel">
           <p className="page-subtitle">{t("plant.scene3dDesc")}</p>
-          <PlaceholderPlantScene
-            objects={sceneObjects}
-            onSelect={(id) => navigate(`${equipmentBase}/${id}`)}
-          />
+          <Suspense fallback={<PageSkeleton />}>
+            <PlaceholderPlantScene
+              objects={sceneObjects}
+              onSelect={(id) => navigate(`${equipmentBase}/${id}`)}
+            />
+          </Suspense>
         </div>
       ) : (
         <>

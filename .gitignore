@@ -20,3 +20,12 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# Generated branding (source of truth: logo/logo.png — run scripts/sync-branding.mjs)
+frontend/public/logo/
+frontend/public/icons/
+frontend/public/favicon.png
+frontend/public/manifest.webmanifest
+assets/branding/logo.png
+frontend/src/assets/logo.png
+frontend/dist/bundle-stats.html
