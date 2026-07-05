@@ -1,33 +1,53 @@
 # GoharTwin
 
-**Digital Twin Platform for Gohar Zamin Industrial Complex**
+**Industrial Digital Twin Platform — bilingual (فارسی / English)**
 
-Version: **0.1.0**
+Version: **0.2.0**
 
 ## Overview
 
-GoharTwin is an industrial digital twin platform covering pellet plant, concentrate plant, steel plant, utilities, and AI-assisted operations.
+GoharTwin is an industrial digital twin platform for the Gohar / Golgohar
+industrial region: mines, concentrators, pellet plants, direct reduction and
+steel plants — with knowledge-driven AI assistance.
 
-Version 0.1 delivers:
+Version 0.2 delivers:
 
-- Platform home screen with module navigation
-- Pellet Plant furnace overview
-- Equipment passport for **Fan 11** (sample data model)
-- REST API for equipment knowledge base
-- Extensible folder structure for future modules
+- **Branding** — GoharTwin logo (SVG), splash screen with animation, favicon,
+  faint page watermark
+- **i18n** — full Persian/English UI (i18next), RTL/LTR switching, Vazirmatn
+  font for Persian, language persisted in localStorage (default fa)
+- **Landing page** — hero + six capability cards (Digital Twin, Industrial AI,
+  Knowledge Graph, Predictive Maintenance, Digital Factory, Process Intelligence)
+- **Site selection** — 4 industrial companies (GZMICO, GMICO, GISDCO, Jahan
+  Foolad) served from `knowledge/sites.json`
+- **Dynamic navigation** — Site → Plant → Area → System → Equipment with
+  breadcrumbs, fully driven by the API (GZMICO → Pellet Plant → Grate-Kiln
+  Furnace → Windbox Zone 11 → FAN-11)
+- **AI Engineer** — chat UI with conversation list (create/rename/delete,
+  localStorage), streaming replies, markdown + syntax highlighting, attachment
+  chips; backend stub streams knowledge-driven bilingual answers (FAN-11
+  questions answered from the real passport)
+- **Dashboard** — stat cards, health gauge, recent assets/documents, alarm
+  summary from `GET /api/stats`
+- **Knowledge Center** — 8 categories (Documents, P&ID, Manuals, Photos,
+  Videos, Drawings, Standards, Lessons Learned) with search, served from
+  `knowledge/library.json`
+- **FAN-11 passport redesign** — tabs: Overview, Specifications, Sensors,
+  Documents, History, Maintenance, Knowledge, AI Assistant
+- **Dark industrial theme** — glass-morphism cards, blue + gold palette,
+  responsive with mobile menu
 
 ## Project Structure
 
 ```
 GoharTwin/
-├── frontend/          # React + Vite UI
-├── backend/           # FastAPI REST API
-├── knowledge/         # Equipment & process knowledge (JSON)
+├── frontend/          # React + Vite + TypeScript UI (i18n fa/en)
+├── backend/           # FastAPI REST API + AI stub
+├── knowledge/         # Sites, hierarchy, library, equipment passports (JSON)
 ├── data/              # Runtime / imported plant data
-├── docs/              # Documentation
-├── assets/            # Images, logos, 3D assets
-├── scripts/           # Dev & deploy scripts
-└── app/               # Future desktop / unified app entry
+├── docs/              # Handbook, architecture, knowledge model
+├── assets/            # Branding (logo)
+└── scripts/           # Dev & deploy scripts
 ```
 
 ## Quick Start
@@ -35,13 +55,12 @@ GoharTwin/
 ### Prerequisites
 
 - Node.js 18+
-- Python 3.10+ (stdlib only — no pip packages required for v0.1)
+- Python 3.10+ with `fastapi` and `uvicorn` (a venv exists at `backend/.venv`)
 
 ### 1. Backend
 
 ```powershell
-cd backend
-python main.py
+backend\.venv\Scripts\python.exe backend\main.py
 ```
 
 ### 2. Frontend
@@ -56,26 +75,25 @@ npm run dev
 
 ### 3. Open
 
-- UI: http://localhost:5173
-- API: http://localhost:8000
-- API Health: http://localhost:8000/api/health
+- UI: http://127.0.0.1:5173
+- API: http://127.0.0.1:8000 (docs at /docs)
+- API Health: http://127.0.0.1:8000/api/health
 
-## GitHub
+### Production build
 
 ```powershell
-git remote add origin https://github.com/GoharTwin/GoharTwin.git
-git add .
-git commit -m "Initial project structure and GoharTwin v0.1"
-git push -u origin main
+cd frontend
+npm run build   # TypeScript strict check + Vite build → dist/
 ```
 
 ## Version Roadmap
 
 | Version | Focus |
 |---------|-------|
-| v0.1 | Platform shell, Fan 11 passport, API skeleton |
-| v0.2 | Real plant tag list & P&ID data import |
-| v1.0 | Interactive furnace twin, AI equipment assistant |
+| v0.1 | ✅ Platform shell, Fan 11 passport, API skeleton |
+| v0.2 | ✅ Branding, i18n (fa/en), landing, sites, dynamic navigation, AI chat, dashboard, knowledge center |
+| v0.3 | Real plant tag list & P&ID data import, furnace SVG, search |
+| v1.0 | 3D plant scenes, live process data, AI on real LLM |
 
 ## License
 

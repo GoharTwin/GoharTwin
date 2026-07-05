@@ -1,36 +1,147 @@
 {
-  "id": "gohar-zamin",
-  "type": "site",
-  "name": "Gohar Zamin",
-  "nameFa": "گهرزمین",
-  "children": [
+  "version": "0.2.0",
+  "sites": [
     {
-      "id": "pellet",
-      "type": "plant",
-      "name": "Pellet Plant",
-      "nameFa": "کارخانه گندله",
+      "id": "gzmico",
+      "type": "site",
+      "name": "Gohar Zamin Mining & Industrial Company",
+      "nameFa": "شرکت معدنی و صنعتی گهرزمین",
       "children": [
         {
-          "id": "grate-kiln-furnace",
-          "type": "area",
-          "name": "Grate-Kiln Furnace",
-          "nameFa": "کوره گریت-کیلن",
+          "id": "mine",
+          "type": "plant",
+          "name": "Gohar Zamin Mine",
+          "nameFa": "معدن گهرزمین",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "concentrator-1",
+          "type": "plant",
+          "name": "Concentrator 1",
+          "nameFa": "کنسانتره ۱",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "concentrator-2",
+          "type": "plant",
+          "name": "Concentrator 2",
+          "nameFa": "کنسانتره ۲",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "concentrator-3",
+          "type": "plant",
+          "name": "Concentrator 3",
+          "nameFa": "کنسانتره ۳",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "pellet",
+          "type": "plant",
+          "name": "Pellet Plant",
+          "nameFa": "کارخانه گندله",
+          "status": "active",
           "children": [
             {
-              "id": "windbox-zone-11",
-              "type": "system",
-              "name": "Windbox Zone 11",
-              "nameFa": "ویندباکس ناحیه ۱۱",
+              "id": "grate-kiln-furnace",
+              "type": "area",
+              "name": "Grate-Kiln Furnace",
+              "nameFa": "کوره گریت-کیلن",
+              "status": "active",
               "children": [
                 {
-                  "type": "equipment",
-                  "ref": "fan-11",
-                  "tag": "FAN-11"
+                  "id": "windbox-zone-11",
+                  "type": "system",
+                  "name": "Windbox Zone 11",
+                  "nameFa": "ویندباکس ناحیه ۱۱",
+                  "status": "active",
+                  "children": [
+                    {
+                      "id": "fan-11",
+                      "type": "equipment",
+                      "ref": "fan-11",
+                      "tag": "FAN-11",
+                      "name": "Windbox Cooling Fan 11",
+                      "nameFa": "فن خنک‌کننده ویندباکس ۱۱",
+                      "status": "operational"
+                    }
+                  ]
                 }
               ]
             }
           ]
+        },
+        {
+          "id": "dri-1",
+          "type": "plant",
+          "name": "Direct Reduction 1",
+          "nameFa": "احیای مستقیم ۱",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "dri-2",
+          "type": "plant",
+          "name": "Direct Reduction 2",
+          "nameFa": "احیای مستقیم ۲",
+          "status": "planned",
+          "children": []
+        },
+        {
+          "id": "steel",
+          "type": "plant",
+          "name": "Steel Plant",
+          "nameFa": "فولادسازی",
+          "status": "planned",
+          "children": []
         }
+      ]
+    },
+    {
+      "id": "gmico",
+      "type": "site",
+      "name": "Golgohar Mining & Industrial Company",
+      "nameFa": "شرکت معدنی و صنعتی گل‌گهر",
+      "children": [
+        { "id": "mine-1", "type": "plant", "name": "Mine 1", "nameFa": "معدن ۱", "status": "planned", "children": [] },
+        { "id": "mine-2", "type": "plant", "name": "Mine 2", "nameFa": "معدن ۲", "status": "planned", "children": [] },
+        { "id": "mine-3", "type": "plant", "name": "Mine 3", "nameFa": "معدن ۳", "status": "planned", "children": [] },
+        { "id": "mine-4", "type": "plant", "name": "Mine 4", "nameFa": "معدن ۴", "status": "planned", "children": [] },
+        { "id": "concentrator-1", "type": "plant", "name": "Concentrator 1", "nameFa": "کنسانتره ۱", "status": "planned", "children": [] },
+        { "id": "concentrator-2", "type": "plant", "name": "Concentrator 2", "nameFa": "کنسانتره ۲", "status": "planned", "children": [] },
+        { "id": "concentrator-3", "type": "plant", "name": "Concentrator 3", "nameFa": "کنسانتره ۳", "status": "planned", "children": [] },
+        { "id": "concentrator-4", "type": "plant", "name": "Concentrator 4", "nameFa": "کنسانتره ۴", "status": "planned", "children": [] },
+        { "id": "pellet-1", "type": "plant", "name": "Pellet Plant 1", "nameFa": "گندله‌سازی ۱", "status": "planned", "children": [] },
+        { "id": "pellet-2", "type": "plant", "name": "Pellet Plant 2", "nameFa": "گندله‌سازی ۲", "status": "planned", "children": [] }
+      ]
+    },
+    {
+      "id": "gisdco",
+      "type": "site",
+      "name": "Golgohar Iron & Steel Development Company",
+      "nameFa": "شرکت توسعه آهن و فولاد گل‌گهر",
+      "children": [
+        { "id": "dri-1", "type": "plant", "name": "Direct Reduction 1", "nameFa": "احیای مستقیم ۱", "status": "planned", "children": [] },
+        { "id": "dri-2", "type": "plant", "name": "Direct Reduction 2", "nameFa": "احیای مستقیم ۲", "status": "planned", "children": [] },
+        { "id": "dri-3", "type": "plant", "name": "Direct Reduction 3", "nameFa": "احیای مستقیم ۳", "status": "planned", "children": [] },
+        { "id": "steel", "type": "plant", "name": "Steel Plant", "nameFa": "فولادسازی", "status": "planned", "children": [] },
+        { "id": "rolling", "type": "plant", "name": "Rolling Mill", "nameFa": "نورد", "status": "planned", "children": [] }
+      ]
+    },
+    {
+      "id": "jahan-foolad",
+      "type": "site",
+      "name": "Jahan Foolad",
+      "nameFa": "جهان فولاد سیرجان",
+      "children": [
+        { "id": "dri-1", "type": "plant", "name": "Direct Reduction 1", "nameFa": "احیای مستقیم ۱", "status": "planned", "children": [] },
+        { "id": "dri-2", "type": "plant", "name": "Direct Reduction 2", "nameFa": "احیای مستقیم ۲", "status": "planned", "children": [] },
+        { "id": "dri-3", "type": "plant", "name": "Direct Reduction 3", "nameFa": "احیای مستقیم ۳", "status": "planned", "children": [] },
+        { "id": "steel", "type": "plant", "name": "Steel Plant", "nameFa": "فولادسازی", "status": "planned", "children": [] }
       ]
     }
   ]

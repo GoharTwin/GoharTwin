@@ -20,3 +20,9 @@ class EquipmentSummary(BaseModel):
     area: str | None = None
     status: str | None = None
     category: str
+
+
+class ChatRequest(BaseModel):
+    message: str
+    language: str = "fa"
+    equipmentId: str | None = None

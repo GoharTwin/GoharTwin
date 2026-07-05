@@ -1,0 +1,197 @@
+{
+  "common": {
+    "appName": "GoharTwin",
+    "tagline": "Industrial Digital Twin Platform",
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "backendOffline": "Backend API is offline. Start the backend on port 8000.",
+    "comingSoon": "Coming Soon",
+    "active": "Active",
+    "open": "Open",
+    "view": "View",
+    "search": "Search",
+    "back": "Back",
+    "close": "Close",
+    "all": "All",
+    "pending": "Pending",
+    "available": "Available",
+    "operational": "Operational",
+    "planned": "Planned",
+    "tbd": "TBD",
+    "notFound": "Not found",
+    "footer": "GoharTwin © 2026 — Industrial Digital Twin Platform"
+  },
+  "nav": {
+    "home": "Home",
+    "sites": "Sites",
+    "dashboard": "Dashboard",
+    "ai": "AI Engineer",
+    "knowledge": "Knowledge Center",
+    "menu": "Menu"
+  },
+  "landing": {
+    "heroTagline": "The digital replica of your industrial complex",
+    "heroIntro": "GoharTwin connects plants, equipment, live data and engineering knowledge into one intelligent platform — from the mine to the steel plant. Every asset gets a digital passport, every question gets a knowledge-driven answer.",
+    "start": "Start Platform",
+    "capabilitiesTitle": "Platform Capabilities",
+    "capabilitiesSubtitle": "Six pillars of the GoharTwin platform",
+    "capabilities": {
+      "digitalTwin": {
+        "title": "Digital Twin",
+        "desc": "A living digital replica of plants, areas and equipment with versioned asset passports."
+      },
+      "industrialAi": {
+        "title": "Industrial AI",
+        "desc": "An AI engineer that answers from the plant knowledge base — traceable, never invented."
+      },
+      "knowledgeGraph": {
+        "title": "Knowledge Graph",
+        "desc": "Sites, plants, systems, equipment, tags and documents connected in one navigable graph."
+      },
+      "predictiveMaintenance": {
+        "title": "Predictive Maintenance",
+        "desc": "Condition monitoring, alarm insight and maintenance strategies per equipment."
+      },
+      "digitalFactory": {
+        "title": "Digital Factory",
+        "desc": "From P&ID to 3D scenes: the whole factory browsable and clickable."
+      },
+      "processIntelligence": {
+        "title": "Process Intelligence",
+        "desc": "Process data, KPIs and health indices turned into operational decisions."
+      }
+    }
+  },
+  "sites": {
+    "title": "Industrial Sites",
+    "subtitle": "Select a company to enter its digital twin",
+    "enter": "Enter Site",
+    "unitsTitle": "Units"
+  },
+  "site": {
+    "plantsTitle": "Plants & Units",
+    "plantsSubtitle": "Select a plant to browse its areas and equipment",
+    "noPlants": "No plants registered for this site yet."
+  },
+  "plant": {
+    "areasTitle": "Areas",
+    "equipmentTitle": "Equipment",
+    "systemLabel": "System",
+    "noEquipment": "No equipment modelled in this plant yet. Passports will appear here as the knowledge base grows.",
+    "openPassport": "Open Passport"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "sites": "Sites"
+  },
+  "dashboard": {
+    "title": "Operations Dashboard",
+    "subtitle": "Live overview of the digital twin platform",
+    "equipmentCount": "Registered Equipment",
+    "runningEquipment": "Running Equipment",
+    "knowledgeItems": "Knowledge Items",
+    "aiRequests": "AI Requests",
+    "healthIndex": "Overall Health Index",
+    "recentAssets": "Recent Assets",
+    "recentDocuments": "Recent Documents",
+    "alarmSummary": "Alarm Summary",
+    "critical": "Critical",
+    "warning": "Warning",
+    "info": "Info",
+    "noAlarms": "No active alarms"
+  },
+  "equipment": {
+    "backToPlant": "Back to plant",
+    "notFound": "Equipment not found or API offline.",
+    "tabs": {
+      "overview": "Overview",
+      "specifications": "Specifications",
+      "sensors": "Sensors",
+      "documents": "Documents",
+      "history": "History",
+      "maintenance": "Maintenance",
+      "knowledge": "Knowledge",
+      "ai": "AI Assistant"
+    },
+    "general": "General",
+    "motor": "Motor",
+    "tag": "Tag",
+    "type": "Type",
+    "plant": "Plant",
+    "area": "Area",
+    "manufacturer": "Manufacturer",
+    "model": "Model",
+    "serialNumber": "Serial Number",
+    "installDate": "Install Date",
+    "lastUpdated": "Last Updated",
+    "status": "Status",
+    "interlocks": "Interlocks & Protections",
+    "aiContext": "AI Context",
+    "noData": "No data available",
+    "strategy": "Strategy",
+    "intervalsTitle": "Maintenance Intervals",
+    "task": "Task",
+    "frequency": "Frequency",
+    "spareParts": "Critical Spare Parts",
+    "relatedEquipment": "Related Equipment",
+    "documentsTitle": "Linked Documents",
+    "historyTitle": "Event Timeline",
+    "historyNote": "Sample timeline — will be fed by CMMS / historian integration.",
+    "history": {
+      "h1": { "date": "2026-07-01", "title": "Vibration baseline recorded", "desc": "Weekly vibration route completed; all points within ISO 10816-3 zone A." },
+      "h2": { "date": "2026-06-15", "title": "Bearing lubrication", "desc": "DE/NDE bearings re-greased per standard quantity table." },
+      "h3": { "date": "2026-05-20", "title": "VFD parameter backup", "desc": "Drive parameters exported and stored in the knowledge base." },
+      "h4": { "date": "2026-04-02", "title": "Annual inspection", "desc": "Impeller and inlet damper inspected during shutdown; no findings." }
+    },
+    "knowledgeTab": {
+      "title": "Knowledge Links",
+      "desc": "Documents and knowledge items related to this equipment.",
+      "empty": "No knowledge items linked to this equipment yet."
+    },
+    "aiScoped": "AI assistant scoped to this equipment. Ask about specs, sensors or maintenance."
+  },
+  "knowledge": {
+    "title": "Knowledge Center",
+    "subtitle": "Documents, drawings, standards and lessons learned of the industrial complex",
+    "searchPlaceholder": "Search knowledge items...",
+    "itemsCount": "{{count}} items",
+    "noItems": "No items found in this category.",
+    "relatedTo": "Related to",
+    "categories": {
+      "all": "All",
+      "documents": "Documents",
+      "pid": "P&ID",
+      "manuals": "Manuals",
+      "photos": "Photos",
+      "videos": "Videos",
+      "drawings": "Drawings",
+      "standards": "Standards",
+      "lessons": "Lessons Learned"
+    }
+  },
+  "ai": {
+    "title": "AI Engineer",
+    "subtitle": "Knowledge-driven assistant for the industrial complex",
+    "conversations": "Conversations",
+    "newChat": "New Conversation",
+    "rename": "Rename",
+    "delete": "Delete",
+    "placeholder": "Ask about equipment, e.g. \"Tell me about FAN-11\"...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "online": "Online",
+    "offline": "Offline",
+    "provider": "Provider",
+    "attachFile": "Attach file",
+    "attachImage": "Attach image",
+    "attachmentNote": "Attachment preview — file upload will be enabled with the document store.",
+    "emptyTitle": "Start a conversation",
+    "emptyDesc": "The AI Engineer answers only from the plant knowledge base. Try asking about FAN-11.",
+    "defaultTitle": "New conversation",
+    "you": "You",
+    "assistant": "AI Engineer"
+  },
+  "splash": {
+    "tagline": "Industrial Digital Twin Platform"
+  }
+}

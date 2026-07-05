@@ -1,0 +1,104 @@
+/* ===== Palette, typography and resets ===== */
+
+:root {
+  --bg-deep: #070b12;
+  --bg-panel: rgba(15, 22, 35, 0.72);
+  --bg-card: rgba(20, 29, 46, 0.66);
+  --bg-hover: rgba(26, 39, 64, 0.85);
+  --bg-input: rgba(10, 16, 27, 0.85);
+  --border: rgba(59, 78, 115, 0.35);
+  --border-light: rgba(88, 112, 156, 0.5);
+  --text-primary: #e8edf5;
+  --text-secondary: #9aa8bf;
+  --text-muted: #6b7a94;
+  --accent: #2d6cdf;
+  --accent-strong: #1e63b0;
+  --accent-glow: rgba(45, 108, 223, 0.25);
+  --gold: #d4a437;
+  --gold-soft: rgba(212, 164, 55, 0.15);
+  --success: #2ecc71;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --planned: #5a6a82;
+  --font-latin: "IBM Plex Sans", system-ui, sans-serif;
+  --font-fa: "Vazirmatn", "IBM Plex Sans", Tahoma, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --glass-blur: blur(14px);
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-latin);
+  background:
+    radial-gradient(ellipse 90% 60% at 70% -10%, rgba(30, 99, 176, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 10% 110%, rgba(212, 164, 55, 0.07) 0%, transparent 60%),
+    var(--bg-deep);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[lang="fa"] body,
+html[lang="fa"] button,
+html[lang="fa"] input,
+html[lang="fa"] textarea {
+  font-family: var(--font-fa);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: var(--text-primary);
+}
+
+::selection {
+  background: var(--accent-glow);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(88, 112, 156, 0.35);
+  border-radius: 999px;
+}
+
+/* Numbers and tags stay latin even in fa */
+.mono {
+  font-family: var(--font-mono);
+}

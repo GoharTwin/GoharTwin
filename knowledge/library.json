@@ -1,0 +1,125 @@
+{
+  "version": "0.2.0",
+  "items": [
+    {
+      "id": "doc-fan11-datasheet",
+      "category": "documents",
+      "title": "FAN-11 Vendor Datasheet",
+      "titleFa": "دیتاشیت سازنده فن ۱۱",
+      "description": "Vendor datasheet for the Windbox Cooling Fan 11 — flow, pressure and impeller data.",
+      "descriptionFa": "دیتاشیت سازنده فن خنک‌کننده ویندباکس ۱۱ — داده‌های دبی، فشار و پروانه.",
+      "fileType": "pdf",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "doc-fan11-motor-list",
+      "category": "documents",
+      "title": "Pellet Plant Motor List — M-11 Entry",
+      "titleFa": "لیست موتور کارخانه گندله — ردیف M-11",
+      "description": "Electrical motor list entry for the FAN-11 drive motor (6.6 kV, VFD).",
+      "descriptionFa": "ردیف لیست موتور برای موتور محرک فن ۱۱ (۶٫۶ کیلوولت، درایو VFD).",
+      "fileType": "xlsx",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11", "M-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "pid-windbox-11",
+      "category": "pid",
+      "title": "P&ID — Windbox Zone 11 Cooling Air",
+      "titleFa": "نقشه P&ID — هوای خنک‌کننده ویندباکس ناحیه ۱۱",
+      "description": "Piping & instrumentation diagram sheet covering FAN-11, dampers and windbox 11 instrumentation.",
+      "descriptionFa": "شیت نقشه لوله‌کشی و ابزار دقیق شامل فن ۱۱، دمپرها و ابزار دقیق ویندباکس ۱۱.",
+      "fileType": "pdf",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11", "WB-11", "DMP-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "manual-fan11-om",
+      "category": "manuals",
+      "title": "Centrifugal Fan Operation & Maintenance Manual",
+      "titleFa": "دستورالعمل بهره‌برداری و نگهداری فن سانتریفیوژ",
+      "description": "Vendor O&M manual applicable to the windbox cooling fan family.",
+      "descriptionFa": "دستورالعمل بهره‌برداری و نگهداری سازنده برای خانواده فن‌های خنک‌کننده ویندباکس.",
+      "fileType": "pdf",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "photo-fan11-installed",
+      "category": "photos",
+      "title": "FAN-11 Installed Condition Photos",
+      "titleFa": "عکس‌های وضعیت نصب فن ۱۱",
+      "description": "Site photos of FAN-11 casing, motor and inlet damper for the visual twin.",
+      "descriptionFa": "عکس‌های میدانی بدنه، موتور و دمپر ورودی فن ۱۱ برای دوقلوی بصری.",
+      "fileType": "jpg",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "video-grate-kiln-walkthrough",
+      "category": "videos",
+      "title": "Grate-Kiln Furnace Walkthrough Video",
+      "titleFa": "ویدئوی بازدید کوره گریت-کیلن",
+      "description": "Walkthrough recording of the grate-kiln furnace area for operator training.",
+      "descriptionFa": "ویدئوی بازدید ناحیه کوره گریت-کیلن برای آموزش اپراتور.",
+      "fileType": "mp4",
+      "status": "pending",
+      "relatedEquipment": [],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "drawing-fan11-ga",
+      "category": "drawings",
+      "title": "FAN-11 General Arrangement Drawing",
+      "titleFa": "نقشه جانمایی کلی فن ۱۱",
+      "description": "GA drawing with foundation, casing and ducting dimensions.",
+      "descriptionFa": "نقشه جانمایی کلی شامل ابعاد فونداسیون، بدنه و کانال‌ها.",
+      "fileType": "dwg",
+      "status": "pending",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "standard-iso-10816-3",
+      "category": "standards",
+      "title": "ISO 10816-3 — Mechanical Vibration Severity",
+      "titleFa": "استاندارد ISO 10816-3 — شدت ارتعاش مکانیکی",
+      "description": "Vibration evaluation standard used for FAN-11 condition monitoring limits.",
+      "descriptionFa": "استاندارد ارزیابی ارتعاش که برای حدود پایش وضعیت فن ۱۱ استفاده می‌شود.",
+      "fileType": "pdf",
+      "status": "available",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "standard-iec-60034",
+      "category": "standards",
+      "title": "IEC 60034 — Rotating Electrical Machines",
+      "titleFa": "استاندارد IEC 60034 — ماشین‌های الکتریکی دوار",
+      "description": "Motor efficiency and testing standard referenced by the M-11 motor passport.",
+      "descriptionFa": "استاندارد بازده و آزمون موتور که در شناسنامه موتور M-11 به آن ارجاع شده است.",
+      "fileType": "pdf",
+      "status": "available",
+      "relatedEquipment": ["M-11"],
+      "date": "2026-07-05"
+    },
+    {
+      "id": "lesson-fan-bearing-overheat",
+      "category": "lessons",
+      "title": "Lesson Learned — Fan Bearing Overheating After Lubrication Change",
+      "titleFa": "درس‌آموخته — داغ شدن یاتاقان فن پس از تغییر روانکار",
+      "description": "Windbox fan DE bearing overheated after switching grease type; root cause was over-greasing. Standard re-lubrication quantity table now applies.",
+      "descriptionFa": "یاتاقان سمت محرک فن ویندباکس پس از تعویض نوع گریس داغ شد؛ علت ریشه‌ای گریس‌زنی بیش از حد بود. اکنون جدول استاندارد مقدار روانکاری اعمال می‌شود.",
+      "fileType": "md",
+      "status": "available",
+      "relatedEquipment": ["FAN-11"],
+      "date": "2026-07-05"
+    }
+  ]
+}
