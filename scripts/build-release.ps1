@@ -65,10 +65,18 @@ if (-not (Test-Path $ApiExe)) {
 }
 Write-Host "API executable: $ApiExe" -ForegroundColor Green
 
-Write-Step "4/6 Quick API smoke test"
+Write-Step "4/6 Quick API smoke test (packaged layout)"
 Stop-GoharTwinProcesses
-$env:GOHARTWIN_ROOT = $Root
-$apiProc = Start-Process -FilePath $ApiExe -PassThru -WindowStyle Hidden -WorkingDirectory $Root
+$TestRoot = Join-Path $Root "release\staging\packaged-root"
+if (Test-Path $TestRoot) { Remove-Item $TestRoot -Recurse -Force }
+New-Item -ItemType Directory -Force -Path (Join-Path $TestRoot "backend") | Out-Null
+Copy-Item -Path (Join-Path $Root "knowledge") -Destination (Join-Path $TestRoot "knowledge") -Recurse
+Copy-Item -Path (Join-Path $Root "frontend\dist") -Destination (Join-Path $TestRoot "frontend\dist") -Recurse
+if (Test-Path (Join-Path $Root "logo")) { Copy-Item -Path (Join-Path $Root "logo") -Destination (Join-Path $TestRoot "logo") -Recurse }
+if (Test-Path (Join-Path $Root "assets\branding")) { Copy-Item -Path (Join-Path $Root "assets\branding") -Destination (Join-Path $TestRoot "assets\branding") -Recurse }
+Copy-Item $ApiExe (Join-Path $TestRoot "backend\gohartwin-api.exe") -Force
+$env:GOHARTWIN_ROOT = $TestRoot
+$apiProc = Start-Process -FilePath (Join-Path $TestRoot "backend\gohartwin-api.exe") -PassThru -WindowStyle Hidden -WorkingDirectory $TestRoot
 try {
     if (-not (Wait-Health 45)) {
         throw "Bundled API failed health check"

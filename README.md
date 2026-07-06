@@ -56,7 +56,7 @@ UI: http://127.0.0.1:5173
 ### Login (GMICO)
 
 - URL: http://127.0.0.1:5173/login?company=gmico
-- Username: `1000-1800`
+- Username: any employee ID **1000** through **1800** (e.g. `1500`)
 - Password: `Goharzamin`
 
 ### Desktop (Dev)

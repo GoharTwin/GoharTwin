@@ -1,15 +1,29 @@
 {
   "version": "0.3.0",
+  "credentialPools": [
+    {
+      "id": "gmico-operator-pool",
+      "companyId": "gmico",
+      "roleId": "operator",
+      "passwordHash": "$2b$12$DBnUwS8CDkPB3VKH.Ssm7OBD4bf5lrNukv/bdlRwaVnWS.ch7xxuW",
+      "passwordAlgorithm": "bcrypt",
+      "usernameRange": { "min": 1000, "max": 1800 },
+      "legacyUsernames": ["1000-1800"],
+      "displayNameTemplate": "GMICO Operator {username}",
+      "displayNameFaTemplate": "اپراتور گهرزمین {username}",
+      "active": true
+    }
+  ],
   "users": [
     {
-      "id": "user-gmico-001",
-      "username": "1000-1800",
+      "id": "user-gmico-admin",
+      "username": "admin",
       "passwordHash": "$2b$12$DBnUwS8CDkPB3VKH.Ssm7OBD4bf5lrNukv/bdlRwaVnWS.ch7xxuW",
       "passwordAlgorithm": "bcrypt",
       "companyId": "gmico",
       "roleId": "administrator",
-      "displayName": "GMICO Operator",
-      "displayNameFa": "اپراتور گهرزمین",
+      "displayName": "GMICO Administrator",
+      "displayNameFa": "مدیر گهرزمین",
       "active": true
     }
   ]

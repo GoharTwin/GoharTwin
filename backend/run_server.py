@@ -15,5 +15,6 @@ os.environ.setdefault("GOHARTWIN_ROOT", str(resource_root()))
 
 if __name__ == "__main__":
     import uvicorn
+    from main import app
 
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")

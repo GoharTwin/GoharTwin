@@ -28,6 +28,7 @@ def create_token(user: dict) -> str:
         "companyId": user["companyId"],
         "roleId": user["roleId"],
         "displayName": user.get("displayName"),
+        "displayNameFa": user.get("displayNameFa"),
         "exp": datetime.now(timezone.utc) + timedelta(hours=JWT_EXPIRE_HOURS),
     }
     return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
@@ -69,13 +70,20 @@ def get_current_user(token: str) -> dict | None:
     if not payload:
         return None
     user = auth_repo.get_by_id(payload["sub"])
-    if not user:
-        return payload
+    if user:
+        return {
+            "id": user["id"],
+            "username": user["username"],
+            "displayName": user.get("displayName"),
+            "displayNameFa": user.get("displayNameFa"),
+            "companyId": user["companyId"],
+            "roleId": user["roleId"],
+        }
     return {
-        "id": user["id"],
-        "username": user["username"],
-        "displayName": user.get("displayName"),
-        "displayNameFa": user.get("displayNameFa"),
-        "companyId": user["companyId"],
-        "roleId": user["roleId"],
+        "id": payload.get("sub"),
+        "username": payload.get("username"),
+        "displayName": payload.get("displayName"),
+        "displayNameFa": payload.get("displayNameFa"),
+        "companyId": payload.get("companyId"),
+        "roleId": payload.get("roleId"),
     }
